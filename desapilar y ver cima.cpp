@@ -5,7 +5,7 @@ using namespace std;
 //nodo
 struct Nodo {
     string dato;  // URL de la pagina visitada
-    Nodo* sge;    // puntero al siguiente nodo
+    Nodo* sge;    // puntero al siguiente nodo //
 };
 
 // -pila
