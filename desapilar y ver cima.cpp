@@ -27,7 +27,7 @@ bool estaVacia(Pila& p) {
     return p.inicio == NULL;
 }
 
-//  Insertar elemento en la parte superior - APILAR (push) ----
+//  Insertar elemento en la parte superior - APILAR (push) 
 
 void apilar(Pila& p, string url) {
     Nodo* nuevo = new Nodo();
