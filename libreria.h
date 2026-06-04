@@ -1,22 +1,66 @@
-#include<iostream>
+#ifndef LIBRERIA_H
+#define LIBRERIA_H
+
+#include <iostream>
 #include <string>
-#include <sstream>
+#include <limits>
 
 using namespace std;
 
-int validNum(string text)
-{
-	int num;
-	do
-	{
-		cout<<text;
-		cin>>num;
-		if(num>0)
-		{
-			return num;
-		}else
-		{
-			cout<<"El numero debe ser mayor a 0";
-		}
-	}while(true);
+// Función para leer números enteros de forma segura sin que se rompa la consola
+inline int leerEntero(string mensaje) {
+    int numero;
+    while (true) {
+        cout << mensaje;
+        if (cin >> numero) {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            return numero;
+        }
+        cout << "[Error] Por favor, ingrese un numero valido.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
 }
+
+// Función para leer texto (strings) con espacios incluidos
+inline string leerCadena(string mensaje) {
+    string texto;
+    cout << mensaje;
+    getline(cin, texto);
+    return texto;
+}
+
+#endif
+#ifndef LIBRERIA_H
+#define LIBRERIA_H
+
+#include <iostream>
+#include <string>
+#include <limits>
+
+using namespace std;
+
+// Función para leer números enteros de forma segura sin que se rompa la consola
+inline int leerEntero(string mensaje) {
+    int numero;
+    while (true) {
+        cout << mensaje;
+        if (cin >> numero) {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            return numero;
+        }
+        cout << "[Error] Por favor, ingrese un numero valido.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+}
+
+// Función para leer texto (strings) con espacios incluidos
+inline string leerCadena(string mensaje) {
+    string texto;
+    cout << mensaje;
+    getline(cin, texto);
+    return texto;
+}
+
+#endif
